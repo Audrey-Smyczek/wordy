@@ -41,6 +41,9 @@ This will involve implementing the `doEvaluate` method for subclasses of `Expres
       <summary>Wait, what method am I supposed to implement?</summary>
 
       What kind of class is this: a `StatementNode` or an `ExpressionNode`? Check the instructions at the top of part 1 again. What method do you implement for this kind of node?
+
+      Statement Node returns void
+      Expression Node returns a value
       
       - <details>
         <summary>Nope, I need more of a hint than that / need help with the syntax.</summary>
