@@ -11,11 +11,11 @@ Next, play with the Wordy Playground (see Project Setup instructions above for h
   - `Set y to 3. Set x to y plus 1.`
   - `Set x to y plus 2 times z.`
   - `Set x to y times 2 plus z.`
-  - `Set x to y times (2 plus z).` (Where did the parentheses go? Why don’t they appear in the AST?)
+  - `Set x to y times (2 plus z).` (Where did the parentheses go? Why don’t they appear in the AST?) I don't know!!
   - `If x is less than y then set z to 0 else set z to 1.` (What are the parts of a ConditionalNode? What is the role of each one of the four children?)
   - `If x is less than y then set z to 0.` (Now there is no `else` clause, so why is there still an `ifFalse` child? What does it contain? Why?)
-  - `If x is less than y then: Set z to 0. End of conditional.` (The colon after `then` allows the conditional to contain multiple statements, up until `End of conditional.` However, this Wordy code means exactly the same thing as the previous item. Why does it produce a different AST? Does different AST necessarily mean different semantics?)
-  - `2 squared.` (What’s particularly interesting about this one?)
+  - `If x is less than y then: Set z to 0. End of conditional.` (The colon after `then` allows the conditional to contain multiple statements, up until `End of conditional.` However, this Wordy code means exactly the same thing as the previous item. Why does it produce a different AST? Does different AST necessarily mean different semantics?) Because it is preparing for the future!
+  - `2 squared.` (What’s particularly interesting about this one?) It causes an error. I changed it to `Set x to x squared.` and that worked.
 - Come up with your own experiments. Explore. Get a feel for the structure of the AST.
 - Now click on the **Interpreted** and **Compiled** tabs. Both of them show an error message, saying they are node implemented yet. That is what you are going to do for this assignment!
 
