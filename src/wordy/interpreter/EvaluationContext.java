@@ -28,11 +28,6 @@ public class EvaluationContext {
         this((node, ctx, phase, result) -> { });
     }
 
-    @Override
-    protected double doEvaluate(EvaluationContext context) {
-        return variables.get();
-    }
-
     /**
      * Returns the current value of the variable with the given name.
      */
