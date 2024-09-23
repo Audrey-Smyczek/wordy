@@ -26,8 +26,20 @@ public class BinaryExpressionNode extends ExpressionNode {
 
     @Override
     protected double doEvaluate(EvaluationContext context) {
-
-
+        var leftValue = lhs.evaluate(context);
+        var rightValue = rhs.evaluate(context);
+        if (operator == Operator.ADDITION) {
+            return rightValue + leftValue;
+        } else if (operator == Operator.SUBTRACTION) {
+            return rightValue - leftValue;
+        } else if (operator == Operator.MULTIPLICATION) {
+            return rightValue *leftValue;
+        } else if (operator == Operator.DIVISION) {
+            return rightValue / leftValue;
+        } else if (operator == Operator.EXPONENTIATION) {
+            return rightValue ^ leftValue;
+        }
+        // throw new UnsupportedOperationException("some helpful message about operator goes here");
     }
 
     @Override
