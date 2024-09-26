@@ -2,6 +2,7 @@ package wordy.ast;
 
 import java.util.Map;
 import java.util.Objects;
+import java.lang.Math;
 
 import wordy.interpreter.EvaluationContext;
 
@@ -31,15 +32,15 @@ public class BinaryExpressionNode extends ExpressionNode {
         if (operator == Operator.ADDITION) {
             return rightValue + leftValue;
         } else if (operator == Operator.SUBTRACTION) {
-            return rightValue - leftValue;
+            return leftValue - rightValue;
         } else if (operator == Operator.MULTIPLICATION) {
             return rightValue *leftValue;
         } else if (operator == Operator.DIVISION) {
-            return rightValue / leftValue;
+            return leftValue / rightValue;
         } else if (operator == Operator.EXPONENTIATION) {
-            return rightValue ^ leftValue;
+            return Math.pow(leftValue, rightValue);
         }
-        // throw new UnsupportedOperationException("some helpful message about operator goes here");
+        throw new UnsupportedOperationException("Unknown Operator Expression. See BinaryExpressionNode.java.");
     }
 
     @Override
