@@ -29,9 +29,9 @@ public class AssignmentNode extends StatementNode {
 
     @Override
     protected void doRun(EvaluationContext context) {
-        var leftValue = variable.evaluate(context);
         var rightValue = expression.evaluate(context);
-        variable.evaluate(context.set("expression", rightValue));
+        var variableName = variable.getName();
+        context.set(variableName, rightValue);
     }
 
     @Override
