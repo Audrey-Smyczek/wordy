@@ -29,7 +29,9 @@ public class BlockNode extends StatementNode {
 
     @Override
     protected void doRun(EvaluationContext context) {
-        
+        for (var statement : statements) {
+            statement.run(context);
+        }
     }
 
     @Override
