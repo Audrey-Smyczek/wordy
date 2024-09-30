@@ -3,8 +3,6 @@ package wordy.ast;
 import java.util.Collections;
 import java.util.Map;
 
-import javax.naming.LinkLoopException;
-
 import wordy.interpreter.EvaluationContext;
 import wordy.interpreter.LoopExited;
 
@@ -20,7 +18,7 @@ public final class LoopExitNode extends StatementNode {
 
     @Override
     protected void doRun(EvaluationContext context) {
-        throw new Exception("A loop was exited while running");
+        throw new LoopExited();
     }
 
     @Override
