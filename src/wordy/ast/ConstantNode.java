@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
 
+import wordy.compiler.WordyExecutable.ExecutionContext;
 import wordy.interpreter.EvaluationContext;
 
 /**
@@ -14,6 +15,10 @@ public final class ConstantNode extends ExpressionNode {
 
     public ConstantNode(double value) {
         this.value = value;
+    }
+
+    public void run(ExecutionContext context) {
+        // context.value;
     }
 
     @Override
