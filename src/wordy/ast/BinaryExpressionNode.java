@@ -2,6 +2,7 @@ package wordy.ast;
 
 import java.util.Map;
 import java.util.Objects;
+import java.io.PrintWriter;
 import java.lang.Math;
 
 import wordy.interpreter.EvaluationContext;
@@ -23,6 +24,21 @@ public class BinaryExpressionNode extends ExpressionNode {
         this.operator = operator;
         this.lhs = lhs;
         this.rhs = rhs;
+    }
+
+    @Override
+    public void compile(PrintWriter out) {
+        if (operator == Operator.ADDITION) {
+            out.print("context." + lhs + " + context." + rhs);
+        } else if (operator == Operator.SUBTRACTION) {
+            out.print("context." + lhs + " - context." + rhs);
+        } else if (operator == Operator.MULTIPLICATION) {
+            out.print("context." + lhs + " * context." + rhs);
+        } else if (operator == Operator.DIVISION) {
+            out.print("context." + lhs + " / context." + rhs);
+        } else if (operator == Operator.EXPONENTIATION) {
+            out.print("Math.pow(context." + lhs + ", " + rhs + ")");
+        }
     }
 
     @Override
