@@ -1,5 +1,6 @@
 package wordy.ast;
 
+import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
@@ -24,6 +25,11 @@ public class VariableNode extends ExpressionNode {
      */
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void compile(PrintWriter out) {
+        out.print("context." + name);
     }
 
     @Override
