@@ -29,7 +29,7 @@ public class BinaryExpressionNode extends ExpressionNode {
     @Override
     public void compile(PrintWriter out) {
         if (operator == Operator.ADDITION) {
-            out.print("context." + lhs + " + context." + rhs);
+            out.print(" + ");
         } else if (operator == Operator.SUBTRACTION) {
             out.print("context." + lhs + " - context." + rhs);
         } else if (operator == Operator.MULTIPLICATION) {
