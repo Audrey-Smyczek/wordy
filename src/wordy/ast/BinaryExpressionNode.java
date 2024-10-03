@@ -34,7 +34,7 @@ public class BinaryExpressionNode extends ExpressionNode {
         } else if (operator == Operator.SUBTRACTION) {
             return leftValue - rightValue;
         } else if (operator == Operator.MULTIPLICATION) {
-            return rightValue *leftValue;
+            return rightValue * leftValue;
         } else if (operator == Operator.DIVISION) {
             return leftValue / rightValue;
         } else if (operator == Operator.EXPONENTIATION) {
