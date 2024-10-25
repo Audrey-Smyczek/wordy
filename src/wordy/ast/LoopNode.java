@@ -1,5 +1,6 @@
 package wordy.ast;
 
+import java.io.PrintWriter;
 import java.util.Map;
 import java.util.Objects;
 
@@ -17,6 +18,13 @@ public class LoopNode extends StatementNode {
 
     public LoopNode(StatementNode body) {
         this.body = body;
+    }
+
+    @Override
+    public void compile(PrintWriter out) {
+        // "while(true) { context.x = (context.x + 1.0); }"
+        out.println("while (true) ");
+        body.compile(out);
     }
 
     @Override

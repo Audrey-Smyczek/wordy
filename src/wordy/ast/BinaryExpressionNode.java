@@ -28,17 +28,25 @@ public class BinaryExpressionNode extends ExpressionNode {
 
     @Override
     public void compile(PrintWriter out) {
-        if (operator == Operator.ADDITION) {
-            out.print(" + ");
-        } else if (operator == Operator.SUBTRACTION) {
-            out.print("context." + lhs + " - context." + rhs);
-        } else if (operator == Operator.MULTIPLICATION) {
-            out.print("context." + lhs + " * context." + rhs);
-        } else if (operator == Operator.DIVISION) {
-            out.print("context." + lhs + " / context." + rhs);
-        } else if (operator == Operator.EXPONENTIATION) {
-            out.print("Math.pow(context." + lhs + ", " + rhs + ")");
+
+        if (operator == Operator.EXPONENTIATION) {
+            out.println("Math.pow");
         }
+        out.println("(");
+        lhs.compile(out);
+        if (operator == Operator.ADDITION) {
+            out.print("+");
+        } else if (operator == Operator.SUBTRACTION) {
+            out.print("-");
+        } else if (operator == Operator.MULTIPLICATION) {
+            out.print("*");
+        } else if (operator == Operator.DIVISION) {
+            out.print("/");
+        } else if (operator == Operator.EXPONENTIATION) {
+            out.print(",");
+        }
+        rhs.compile(out);
+        out.println(")");
     }
 
     @Override
